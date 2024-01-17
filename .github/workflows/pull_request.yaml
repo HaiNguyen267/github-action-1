@@ -1,6 +1,7 @@
 name: Pull Request for main branch workflow
 
 on:
+  workflow_dispatch:
   pull_request:
     branches:
       - main
@@ -18,4 +19,4 @@ jobs:
           body: |
             Thank you for creating the PR
               - Please wait for the PR to be approved
-          
+              
