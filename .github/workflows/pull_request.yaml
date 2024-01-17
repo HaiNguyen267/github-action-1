@@ -1,10 +1,9 @@
 name: Pull Request for main branch workflow
 
 on:
-  workflow_dispatch:
   pull_request:
     branches:
-      - main:
+      - main
 
   
 
