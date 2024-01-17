@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: create the first comment for the PR
-        uses: peter-evans/create-or-update-comment
+        uses: peter-evans/create-or-update-comment@v3
         with: 
           issue-number: ${{ github.event.issue.number }}
           body: |
