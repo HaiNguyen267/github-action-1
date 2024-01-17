@@ -1,0 +1,25 @@
+name: workflow for hello branches
+
+on:
+  push:
+    branches:
+      - hello
+jobs:
+  hello:
+    runs-on: ubuntu-latest
+    steps:
+      - name: First step
+        run: echo "First step on hello job1"
+        shell: bash
+      - name: Second step 
+        run: echo "Second step on the hello job1"
+        shell: bash
+
+  hello2:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Only step of job#2
+        run: echo "this is the only step of job2"
+        shell: bash
+     
+
