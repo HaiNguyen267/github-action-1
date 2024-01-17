@@ -1,0 +1,22 @@
+name: Pull Request for main branch workflow
+
+on:
+  workflow_dispatch:
+  pull_request:
+    branches:
+      - main:
+
+  
+
+jobs:
+  create-first-comment:
+    runs-on: ubuntu-latest
+    steps:
+      - name: create the first comment for the PR
+        uses: peter-evans/create-or-update-comment
+        with: 
+          issue-number: ${{ github.event.issue.number }}
+          body: |
+            Thank you for creating the PR
+              - Please wait for the PR to be approved
+          
