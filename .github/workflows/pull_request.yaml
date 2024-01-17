@@ -6,17 +6,23 @@ on:
     branches:
       - main
 
-  
 
 jobs:
   create-first-comment:
     runs-on: ubuntu-latest
     steps:
-      - name: create the first comment for the PR
+      - name: "dump github context"
+        run: echo '${{ toJSON(github.event) }}' | jq
+        shell: bash
+      - name: Create comment
         uses: peter-evans/create-or-update-comment@v3
-        with: 
-          issue-number: ${{ github.event.issue.number }}
+        with:
+          issue-number: ${{ github.event.issue.number }}  
           body: |
-            Thank you for creating the PR
-              - Please wait for the PR to be approved
+            This is a multi-line test comment
+            - With GitHub **Markdown** :sparkles:
+            - Created by [create-or-update-comment][1]
+  
+            [1]: https://github.com/peter-evans/create-or-update-comment
+          reactions: '+1'
               
